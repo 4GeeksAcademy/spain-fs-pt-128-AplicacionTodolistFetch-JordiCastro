@@ -13,6 +13,10 @@ const Home = () => {
 			e.target.value = "";
 		}
 	}
+	const deleteBtn = (deleteIndex) => {
+		setListToDo(listToDo.filter((item, index) => index !== deleteIndex));
+	}
+	
 	return (
 		<div className="text-center">
 			<h1 className="my-5">ToDo List</h1>
@@ -27,14 +31,16 @@ const Home = () => {
 				{
 					listToDo.map((listItem, index) => {
 						return (
-							<div className="pb-3 my-3 items d-flex justify-content-between">
-								<div key={index} className="">{listItem}</div>
-								<button className="delete">X</button>
+							<div key={index} className="pb-2 my-3 items d-flex justify-content-between">
+								<div className="">{listItem}</div>
+								<button className="btn delete" 
+								onClick={() => deleteBtn(index)}								
+								>X</button>					
 							</div>
 						);
 					})
 				}
-				<p className="m-0 text-secondary">{listToDo.length} items</p>
+				<p className="m-0 text-secondary counterItems">{listToDo.length} items</p>
 			</div>
 		</div>
 	);
