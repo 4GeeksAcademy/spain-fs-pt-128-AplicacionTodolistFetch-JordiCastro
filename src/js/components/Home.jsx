@@ -32,7 +32,7 @@ const Home = () => {
 					listToDo.map((listItem, index) => {
 						return (
 							<div key={index} className="pb-2 my-3 items d-flex justify-content-between">
-								<div className="">{listItem}</div>
+								<div className=""><i class="fa-solid fa-circle-dot"></i> {listItem}</div>
 								<button className="btn delete" 
 								onClick={() => deleteBtn(index)}								
 								>X</button>					
